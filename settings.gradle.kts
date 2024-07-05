@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidDevelopKit"
 include(":app")
- 
+include(":StateMachine")
