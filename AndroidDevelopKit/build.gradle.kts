@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.eathemeat.statemachine"
+    namespace = "com.eathemeat.androiddevelopkit"
     compileSdk = 34
 
     defaultConfig {
@@ -40,23 +40,22 @@ android {
     }
 }
 
-
 publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "io.github.peter12757"
-            artifactId = "StateMachine"
+            artifactId = "AndroidDevelopKit"
             version = "1.0.0"
             afterEvaluate {
                 from(components["release"])
             }
             pom {
-                name = "StateMachine"
+                name = "androidWidget"
                 version = "1.0.0"
-                artifactId = "StateMachine"
+                artifactId = "AndroidDevelopKit"
                 groupId  ="io.github.peter12757"
                 packaging  ="aar"
-                description  ="StateMachine"
+                description  ="AndroidDevelopKit"
                 url = "https://github.com/peter12757/AndroidDevelopKit"
                 scm {
                     url = "https://github.com/peter12757/AndroidDevelopKit/tree/main"
@@ -88,11 +87,13 @@ publishing {
     }
 
 }
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(project(":StateMachine"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
